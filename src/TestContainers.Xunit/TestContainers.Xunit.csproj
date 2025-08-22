@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>TestContainers.Xunit</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Testcontainers" Version="4.6.0" />
+      <PackageReference Include="xunit.v3.extensibility.core" Version="3.0.1" />
+    </ItemGroup>
+
+</Project>

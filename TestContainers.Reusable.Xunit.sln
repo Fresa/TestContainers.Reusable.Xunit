@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestContainers.Reusable.Xunit", "src\TestContainers.Reusable.Xunit\TestContainers.Reusable.Xunit.csproj", "{E7EBDFF5-891E-453E-A97D-67974E39BBAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestContainers.Xunit", "src\TestContainers.Xunit\TestContainers.Xunit.csproj", "{E7EBDFF5-891E-453E-A97D-67974E39BBAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
