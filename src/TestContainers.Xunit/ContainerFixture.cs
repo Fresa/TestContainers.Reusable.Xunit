@@ -11,14 +11,21 @@ using Xunit.Sdk;
 
 namespace TestContainers.Xunit;
 
+/// <summary>
+/// Reusable container fixture with multiprocess/threading support
+/// </summary>
+/// <typeparam name="TBuilderEntity">Container builder</typeparam>
+/// <typeparam name="TContainerEntity">Container</typeparam>
 public abstract class ContainerFixture
     <TBuilderEntity, TContainerEntity> : IAsyncLifetime
     where TBuilderEntity : IContainerBuilder<TBuilderEntity, TContainerEntity>, new()
     where TContainerEntity : IContainer
 {
-    // ReSharper disable once StaticMemberInGenericType
-    // Is not dependable on generic constraints
-    private static readonly bool Reuse = 
+    /// <summary>
+    /// Reuse the container?
+    /// Defaults to the environment variable TESTCONTAINERS_REUSE_ENABLE or false
+    /// </summary>
+    protected virtual bool Reuse { get; } = 
         bool.Parse(Environment.GetEnvironmentVariable("TESTCONTAINERS_REUSE_ENABLE") ?? "false");
     
     private readonly Lazy<TContainerEntity> _container;
@@ -60,7 +67,7 @@ public abstract class ContainerFixture
     
     protected virtual TBuilderEntity Configure(TBuilderEntity builder) => builder;
 
-    private static TBuilderEntity ConfigureName(TBuilderEntity builder)
+    private TBuilderEntity ConfigureName(TBuilderEntity builder)
     {
         if (!Reuse)
         {

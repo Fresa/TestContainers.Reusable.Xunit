@@ -7,7 +7,7 @@ namespace TestContainers.Xunit.IntegrationTests.Fixtures.HelloWorld;
 public sealed class HelloWorldContainerBuilder : ContainerBuilder<HelloWorldContainerBuilder, HelloWorldContainer, HelloWorldConfiguration>
 {
     private const string Image = "testcontainers/helloworld:1.2.0";
-    private const ushort Port = 8080;
+    internal const ushort Port = 8080;
     
     public HelloWorldContainerBuilder()
         : this(new HelloWorldConfiguration())
