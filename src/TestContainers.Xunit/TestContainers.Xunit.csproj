@@ -5,11 +5,36 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>TestContainers.Xunit</RootNamespace>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <PackageReleaseNotes>$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)/release_notes.txt'))</PackageReleaseNotes>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageId>Reusable.XunitV3.TestContainers</PackageId>
+        <PackageVersion></PackageVersion>
+        <Authors>Fredrik Arvidsson</Authors>
+        <Company>FKAN Consulting AB</Company>
+        <PackageTags>TestContainers Xunit</PackageTags>
+        <Description>Xunit fixture supporting reusable test containers</Description>
+        <RepositoryUrl>https://github.com/Fresa/TestContainers.Xunit.Reusable</RepositoryUrl>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <Copyright>Copyright © 2025 Fredrik Arvidsson</Copyright>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Testcontainers" Version="4.6.0" />
-      <PackageReference Include="xunit.v3.extensibility.core" Version="3.0.1" />
+      <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Testcontainers" Version="4.0.0" />
+      <PackageReference Include="xunit.v3.extensibility.core" Version="3.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+    </ItemGroup>
 </Project>
