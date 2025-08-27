@@ -5,10 +5,10 @@ This is a drop-in replacement for [TestContainers.XunitV3](https://www.nuget.org
 
 ## Installation
 ```Shell
-dotnet add package TestContainers.XunitV3.Reusable
+dotnet add package Reusable.XunitV3.TestContainers
 ```
 
-https://www.nuget.org/packages/TestContainers.XunitV3.Reusable/
+https://www.nuget.org/packages/Reusable.XunitV3.TestContainers/
 
 ## Getting Started
 This library has the same functionality as [TestContainers.XunitV3](https://www.nuget.org/packages/Testcontainers.XunitV3) but also supports test runner parallelism when using reusable containers.

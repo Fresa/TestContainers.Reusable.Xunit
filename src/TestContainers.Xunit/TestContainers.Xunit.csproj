@@ -9,7 +9,7 @@
         <PackageReleaseNotes>$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)/release_notes.txt'))</PackageReleaseNotes>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <PackageId>ParameterStyleParsers.OpenAPI</PackageId>
+        <PackageId>Reusable.XunitV3.TestContainers</PackageId>
         <PackageVersion></PackageVersion>
         <Authors>Fredrik Arvidsson</Authors>
         <Company>FKAN Consulting AB</Company>
