@@ -19,5 +19,5 @@ internal abstract class Logger : ILogger
     public bool IsEnabled(LogLevel logLevel) => logLevel != LogLevel.None;
 
     public IDisposable BeginScope<TState>(TState state)
-        where TState : notnull => new NullScope();
-} 
+        => new NullScope();
+}
