@@ -32,6 +32,10 @@ public abstract class ContainerFixture
 
     private ExceptionDispatchInfo? _exception;
 
+    /// <summary>
+    /// Initializes a new instance of ContainerFixture
+    /// </summary>
+    /// <param name="sink">Message sink for diagnostics</param>
     protected ContainerFixture(IMessageSink sink)
     {
         _container = new Lazy<TContainerEntity>(() =>
@@ -42,8 +46,9 @@ public abstract class ContainerFixture
                 .Build());
     }
 
-    // ReSharper disable once MemberCanBePrivate.Global
-    // Public API
+    /// <summary>
+    /// Resolves the container
+    /// </summary>
     public TContainerEntity Container
     {
         get
@@ -65,6 +70,11 @@ public abstract class ContainerFixture
         GC.SuppressFinalize(this);
     }
     
+    /// <summary>
+    /// Configure the container
+    /// </summary>
+    /// <param name="builder">The builder used to configure the container</param>
+    /// <returns>The configured container builder</returns>
     protected virtual TBuilderEntity Configure(TBuilderEntity builder) => builder;
 
     private TBuilderEntity ConfigureName(TBuilderEntity builder)
