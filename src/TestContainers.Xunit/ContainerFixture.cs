@@ -18,7 +18,7 @@ namespace TestContainers.Xunit;
 /// <typeparam name="TContainerEntity">Container</typeparam>
 public abstract class ContainerFixture
     <TBuilderEntity, TContainerEntity> : IAsyncLifetime
-    where TBuilderEntity : IContainerBuilder<TBuilderEntity, TContainerEntity>, new()
+    where TBuilderEntity : IContainerBuilder<TBuilderEntity, TContainerEntity, IContainerConfiguration>, new()
     where TContainerEntity : IContainer
 {
     /// <summary>
