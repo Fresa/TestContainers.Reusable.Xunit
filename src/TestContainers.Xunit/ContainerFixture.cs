@@ -86,10 +86,12 @@ public abstract class ContainerFixture
 
         var configuration = ResolveContainerConfiguration(builder);
         return builder.WithName(configuration.GetReuseHash()
-            // Replace invalid base64 characters 
+            // Replace invalid base64 characters
+            // https://docs.docker.com/reference/api/engine/version/v1.56/#tag/Container/operation/ContainerCreate
             .Replace('=', '_')
             .Replace('/', '_')
-            .Replace('+', '_'));
+            .Replace('+', '_')
+            .TrimStart('_'));
     }
 
     private static IContainerConfiguration ResolveContainerConfiguration(TBuilderEntity builder)
